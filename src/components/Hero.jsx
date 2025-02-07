@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Hero.css";
+import "./../styles/Hero.css";
 
 const Hero = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -31,3 +31,4 @@ const Hero = () => {
 };
 
 export default Hero;
+

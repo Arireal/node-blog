@@ -1,52 +1,17 @@
-import React, { useEffect } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect } from "react";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Logos from "./components/Logo";
+import Logos from "./components/Logos";
 import Grid from "./components/Grid";
-import "./App.css";
-import "./components/Grid.css";
-import "./components/About.css";
-import "./components/Hero.css";
-import "./components/Logo.css";
-gsap.registerPlugin(ScrollTrigger);
+import "./styles/App.css";
 
 const App = () => {
   useEffect(() => {
-    gsap.from(".hero .logo", {
-      duration: 1,
-      y: -100,
-      opacity: 0,
-      ease: "power3.out",
-    });
-
-    gsap.from(".about-text", {
-      scrollTrigger: {
-        trigger: ".about",
-        start: "top center",
-      },
-      duration: 1,
-      x: -100,
-      opacity: 0,
-      ease: "power3.out",
-    });
-
-    gsap.from(".grid-item", {
-      scrollTrigger: {
-        trigger: ".grid",
-        start: "top center",
-      },
-      duration: 0.8,
-      y: 50,
-      opacity: 0,
-      stagger: 0.2,
-      ease: "power3.out",
-    });
+    // You can test logic here if necessary, but without gsap/ScrollTrigger
   }, []);
 
   return (
-    <div>
+    <div className="App">
       <Hero />
       <About />
       <Logos />
