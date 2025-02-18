@@ -10,3 +10,67 @@ body {
   overflow-x: hidden;
 }
 
+/* For Webkit-based browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 10px; /* Adjust the width if needed */
+}
+
+::-webkit-scrollbar-track {
+  background: #7d93a1; /* Background of the scrollbar track */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cee5c2; /* Color of the scrollbar handle */
+  border-radius: 5px;
+}
+
+/* Optional: Change scrollbar on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b5d6a8;
+}
+/* For Firefox */
+* {
+  scrollbar-width: thin; /* Options: auto, thin */
+  scrollbar-color: #7afccb #e05353; /* thumb color | track color */
+}
+.about-button {
+  background-color: #3498db; /* Set a background color (e.g., blue) */
+  border: none;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the content horizontally */
+  padding: 10px 20px; /* Add some padding for the button */
+  cursor: pointer;
+  border-radius: 8px; /* Set the border radius to 8px */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin: 0 auto; /* Center the button horizontally */
+  display: block; /* Ensure it's a block-level element for margin auto to work */
+}
+
+.about-button:hover {
+  background-color: #2980b9; /* Change the background color on hover */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.about-button .fa-chevron-down,
+.about-button .fa-chevron-up {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+/* Optional: Adjust the AboutPage container padding */
+.about-page {
+  padding: 20px;
+}
+
+/* Optional: Add transition for smooth expanding and collapsing */
+.about-container {
+  transition: max-height 0.5s ease-in-out;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+  

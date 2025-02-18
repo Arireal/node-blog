@@ -5,37 +5,83 @@
 }
 
 .grid-container {
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
-  display: grid;
+  display: grid !important;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   padding: 0 2rem;
 }
 
 .grid-item {
-  position: relative;
-  padding-top: 2rem;
-}
-
-.grid-item h3 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-size: 1.2rem;
-  color: #333;
-}
-
-.grid-item .placeholder {
-  width: 100%;
-  padding-bottom: 100%;
-  background: #f5f5f5;
-  position: relative;
+  position: relative; /* Ensures h3 is positioned relative to the grid-item */
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #999;
+  width: 100%;
+  height: 100%;
 }
+
+.image-link {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 400px; /* Adjust as needed */
+  overflow: hidden;
+  border-radius: 8px; /* Optional rounded corners */
+}
+
+.image-link img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.image-link:hover img {
+  transform: scale(1.1); /* Zoom effect on hover */
+}
+
+.hover-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-link:hover .hover-text {
+  opacity: 1;
+}
+
+
+.grid-item h3 {
+  align-self: flex-start; 
+  text-align: left; 
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  padding-left: 2rem; 
+  width: 100%; 
+}
+
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
 
 @media (max-width: 768px) {
   .about-content {
@@ -63,4 +109,17 @@
   .grid-container {
       grid-template-columns: 1fr;
   }
+}
+
+.grid-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.grid-title h3 {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #880e4f;
 }

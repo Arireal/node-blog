@@ -1,29 +1,45 @@
 import React, { useState } from "react";
 import "./../styles/Hero.css";
 
-const Hero = () => {
+const Hero = ({ scrollToAbout }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
+  // Update scrollToAbout to also close the menu
+  const handleScrollToAbout = () => {
+    scrollToAbout();
+    toggleMenu(); // Close the menu after scrolling
+  };
+
   return (
-    <section className="hero">  {/* Changed from classnameName to className */}
-      <div className="logo">  {/* Changed from classnameName to className */}
-        <img src="/api/placeholder/120/120" alt="Logo" />
+    <section className="hero">
+      <div className="logo">
+        <img src="/images/300x300.png" alt="Logo" />
       </div>
+      
+      {/* Menu Toggle */}
       <div className={`menu-toggle ${menuOpen ? "active" : ""}`} onClick={toggleMenu}>
         <span></span>
         <span></span>
         <span></span>
       </div>
-      <nav className={`menu ${menuOpen ? "active" : ""}`}>  {/* Changed from classnameName to className */}
+
+      {/* Exit X Button - Fixed position */}
+      <div className={`exit-x ${menuOpen ? "active" : ""}`} onClick={toggleMenu}>
+      </div>
+
+      {/* Navigation Menu */}
+      <nav className={`menu ${menuOpen ? "active" : ""}`}>
         <ul>
           <li><a href="#home" onClick={toggleMenu}>Home</a></li>
-          <li><a href="#about" onClick={toggleMenu}>About</a></li>
-          <li><a href="#portfolio" onClick={toggleMenu}>Portfolio</a></li>
-          <li><a href="#contact" onClick={toggleMenu}>Contact</a></li>
+          {/* Use handleScrollToAbout to scroll to the About Us button and close the menu */}
+          <li><a href="#about-button" onClick={handleScrollToAbout}>About Us</a></li>
+          <li><a href="#portfolio" onClick={toggleMenu}>Bookish Wing</a></li>
+          <li><a href="#contact" onClick={toggleMenu}>Visual Storytelling Wing</a></li>
+          <li><a href="#contact" onClick={toggleMenu}>Daily Designs Wing</a></li>
         </ul>
       </nav>
     </section>
@@ -31,4 +47,3 @@ const Hero = () => {
 };
 
 export default Hero;
-

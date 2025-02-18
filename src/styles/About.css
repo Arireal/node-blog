@@ -1,7 +1,7 @@
 /* About Section */
 .about {
   padding: 6rem 0;
-  background: #f8bbd0;
+  background: #cee5c2;
   position: relative;
   display: flex;
   justify-content: center;
@@ -60,3 +60,29 @@
 .social-icons a:hover {
   transform: scale(1.1);
 }
+.round-button {
+  display: inline-block;
+  padding: 10px 30px;  /* Adjust the padding as needed */
+  background-color: #6a3960;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 12px;  /* Rounded corners */
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+.round-button:hover {
+  background-color: #e05353;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.round-button:focus {
+  outline: none;
+}
+

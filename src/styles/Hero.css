@@ -1,17 +1,29 @@
-/* Hero Section */
 .hero {
-  height: 100vh;
+  position: relative;
+  height: 70vh !important;
   background-color: #fce4ec;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 2rem;
+
+  /* Absolute path for the public folder */
+  background-image: url('/public/images/hero.png'); 
+  background-size: cover;
+  background-position: center;
 }
 
+@media (max-width: 768px) {
+  .hero {
+    background-image: url('/public/images/hero-mobile.png'); /* Mobile version */
+  }
+}
+
+
 .logo {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height:150px;
   background: #fff;
   border-radius: 50%;
   display: flex;
@@ -20,13 +32,21 @@
 }
 
 .logo img {
-  width: 60%;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Menu Styles */
+/* Make the menu toggle icon fixed */
+/* Wrapper for positioning */
+.hero {
+  position: relative; /* Keeps the menu-toggle relative to this container */
+}
+
+/* Menu toggle that scrolls with the page */
 .menu-toggle {
-  position: absolute;
+  position: absolute; /* Keeps it within the .hero container */
   top: 2rem;
   right: 2rem;
   width: 30px;
@@ -35,18 +55,35 @@
   z-index: 100;
 }
 
+/* Exit X button */
+.menu-toggle .exit-x {
+  position: fixed; /* Fix the position of the X */
+  top: 2rem;
+  right: 2rem; /* Adjust based on where you want the X button */
+  z-index: 101; /* Ensures it is above the menu toggle */
+}
+
 .menu-toggle span {
   display: block;
   width: 100%;
   height: 2px;
-  background: #333;
+  background: #e05353;
   position: absolute;
   transition: transform 0.3s ease;
 }
 
-.menu-toggle span:nth-child(1) { top: 0; }
-.menu-toggle span:nth-child(2) { top: 50%; transform: translateY(-50%); }
-.menu-toggle span:nth-child(3) { bottom: 0; }
+.menu-toggle span:nth-child(1) {
+  top: 0;
+}
+
+.menu-toggle span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.menu-toggle span:nth-child(3) {
+  bottom: 0;
+}
 
 .menu-toggle.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
