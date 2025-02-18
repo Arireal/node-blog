@@ -28,4 +28,4 @@ This is a simple blog built using **React** for the frontend and **Node.js with 
 
 ![2](https://github.com/user-attachments/assets/7a774756-b2cd-4d03-98b7-82bf3b0ad7d9)
 
- 
+ The website was primarily designed for a mobile audience but is fully responsive and works seamlessly on desktops and tablets as well.
